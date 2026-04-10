@@ -35,13 +35,20 @@
                 <a href="#ai-chatbot" class="nav-btn ai-chatbot-btn">AI Chatbot</a>
                 <!-- Mobile Menu Toggle -->
                 <button class="mobile-menu-toggle" id="mobile-menu-toggle">
-                    <i class="fas fa-bars"></i>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
                 </div>
                 </header>
         
         <!-- Mobile Navigation Menu -->
+        <div class="mobile-overlay" id="mobile-overlay"></div>
         <div class="mobile-nav" id="mobile-nav">
+            <div class="mobile-nav-header">
+                <h3>Menu</h3>
+                <button class="close-menu" id="close-menu">&times;</button>
+            </div>
             <a href="#about" class="mobile-nav-link">About</a>
             <a href="#experience" class="mobile-nav-link">Experience</a>
             <a href="#project" class="mobile-nav-link">Project</a>
@@ -144,7 +151,7 @@
                         <h3>Send a Message</h3>
                         <input type="email" placeholder="Your Email" required style="width: 100%;">
                         <textarea placeholder="Your Message" rows="6" required style="width: 100%; flex-grow: 1;"></textarea>
-                        <button type="submit" class="nav-btn ai-chatbot-btn" style="width: 100%; margin-top: auto;">Send Message</button>
+                        <button type="submit" class="nav-btn submit-btn" style="width: 100%; margin-top: auto;">Send Message</button>
                     </form>
                 </div>
             </section>
