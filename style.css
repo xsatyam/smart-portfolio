@@ -7,6 +7,7 @@
     --card-bg: rgba(255, 255, 255, 0.05);
     --accent-color: #007bff;
     --btn-hover: #0056b3;
+    --mono-font: 'JetBrains Mono', 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 [data-theme="light"] {
@@ -31,10 +32,18 @@ html {
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: 'monospace', serif;
+    font-family: 'Inter', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
     transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+}
+
+h2, h3 {
+    font-family: var(--mono-font);
 }
 
 /* Background Animated Lines */
@@ -146,6 +155,7 @@ body {
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 500;
+    font-family: var(--mono-font);
     padding: 10px;
     transition: 0.3s;
 }
@@ -186,6 +196,7 @@ body {
     text-decoration: none;
     font-weight: 500;
     font-size: 0.9rem;
+    font-family: var(--mono-font);
     padding: 8px 20px;
     border-radius: 50px; /* Round pill shape */
     border: 1px solid var(--border-color);
@@ -206,6 +217,7 @@ body {
     padding: 10px 22px;
     border-radius: 50px;
     font-weight: 600;
+    font-family: var(--mono-font);
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -393,6 +405,7 @@ body {
     font-size: 0.85rem;
     opacity: 0.5;
     font-weight: 500;
+    font-family: var(--mono-font);
 }
 
 /* Contact Form */
@@ -410,7 +423,7 @@ body {
     border: 1px solid var(--border-color);
     background: var(--card-bg);
     color: var(--text-color);
-    font-family: inherit;
+    font-family: var(--mono-font);
     width: 100%;
 }
 
