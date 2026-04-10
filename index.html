@@ -63,7 +63,7 @@
         <!-- Profile Photo Placeholder -->
         <div class="profile-section">
             <div class="profile-photo-wrapper">
-                <img src="satyam.jpg" alt="Satyam's Photo" class="profile-photo">
+                <img src="satyam.png" alt="Satyam's Photo" class="profile-photo">
             </div>
             <div class="intro-text card" style="text-align: left; max-width: 600px; margin: 0;">
                 <h1>Hello, I'm Satyam</h1>
@@ -77,17 +77,44 @@
                 <h2>About Me</h2>
                 <div class="card">
                     <p>Welcome to my personal space. I specialize in web technologies and love creating beautiful, functional interfaces. With a focus on user experience and clean code, I strive to make the web a better place.</p>
+                    <ul class="stats-list">
+                        <li><strong>Education:</strong> Currently pursuing a B.Tech degree at Gurukula Kangri University.</li>
+                        <li><strong>Core Skills:</strong> Specialized in MERN Stack Development.</li>
+                        <li><strong>Technical Interests:</strong> Deeply interested in Artificial Intelligence (AI) and Machine Learning (ML).</li>
+                        <li><strong>Future Outlook:</strong> Passionate about exploring and adopting emerging technologies to stay ahead in the tech industry.</li>
+                    </ul>
                 </div>
             </section>
 
             <section id="experience" class="page-section">
-                <h2>Experience</h2>
+                <h2>Technical Proficiency</h2>
                 <div class="card">
-                    <h3>Senior Developer</h3>
-                    <p>Building scalable web applications and leading technical teams.</p>
-                    <br>
-                    <h3>Open Source Contributor</h3>
-                    <p>Actively contributing to various projects on GitHub.</p>
+                    <table class="skills-table">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Technologies</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Languages</strong></td>
+                                <td>C, C++, Python, Java, Go, Rust</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Frontend</strong></td>
+                                <td>React, Modern JavaScript</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Backend</strong></td>
+                                <td>Spring Boot</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Database</strong></td>
+                                <td>MongoDB</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </section>
 
@@ -115,12 +142,23 @@
 
             <section id="ai-chatbot" class="page-section">
                 <h2>AI Chatbot</h2>
-                <div class="card" style="text-align: center;">
-                    <p>Interact with my personal AI assistant to learn more about my skills and experience.</p>
-                    <div style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 12px; margin: 20px 0; text-align: left;">
-                        <p>AI: Hello! How can I help you today?</p>
+                <div class="card ai-card" style="max-width: 700px; margin: 0 auto; position: relative;">
+                    <div class="chat-controls" style="position: absolute; top: 20px; right: 20px; display: flex; gap: 10px;">
+                        <button id="refresh-chat" class="control-btn" title="Refresh Chat"><i class="fas fa-sync-alt"></i></button>
+                        <button id="clear-chat" class="control-btn clear-btn" title="Clear Chat"><i class="fas fa-times"></i></button>
                     </div>
-                    <button class="nav-btn ai-chatbot-btn" style="display: inline-block;">Start Chatting</button>
+                    <p style="margin-bottom: 20px; padding-right: 80px;">Ask my personal AI assistant anything about my skills, experience, or education.</p>
+                    
+                    <div id="chat-container" class="chat-container" style="background: rgba(0,0,0,0.2); height: 300px; border-radius: 12px; margin-bottom: 20px; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px;">
+                        <div class="chat-message bot-message">
+                            <strong>AI:</strong> Hello! I'm Satyam's virtual assistant. What would you like to know about him?
+                        </div>
+                    </div>
+
+                    <div class="chat-input-wrapper" style="display: flex; gap: 10px;">
+                        <input type="text" id="user-query" placeholder="Ask me something (e.g., What are your skills?)" style="flex: 1; padding: 12px; border-radius: 50px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-family: var(--mono-font);">
+                        <button id="send-query" class="nav-btn ai-chatbot-btn" style="padding: 12px 25px;">Ask</button>
+                    </div>
                 </div>
             </section>
 
@@ -132,14 +170,17 @@
                             <h3>Direct Message</h3>
                             <p style="margin-bottom: 24px; opacity: 0.8; font-size: 0.95rem;">Feel free to reach out to me directly on any of these platforms:</p>
                             <div class="contact-links" style="display: flex; flex-direction: column; gap: 15px;">
-                                <a href="mailto:satyam@example.com" class="nav-link" style="display: flex; align-items: center; gap: 10px; width: fit-content;">
-                                    <i class="fas fa-envelope"></i> satyam@example.com
+                                <a href="mailto:xsatyam@10gmail.com" class="nav-link" style="display: flex; align-items: center; gap: 10px; width: fit-content;">
+                                    <i class="fas fa-envelope"></i> xsatyam10@gmail.com
                                 </a>
                                 <a href="https://www.linkedin.com/in/xsatyam/" target="_blank" class="nav-link" style="display: flex; align-items: center; gap: 10px; width: fit-content;">
                                     <i class="fab fa-linkedin"></i> LinkedIn Profile
                                 </a>
                                 <a href="https://github.com/xsatyam" target="_blank" class="nav-link" style="display: flex; align-items: center; gap: 10px; width: fit-content;">
                                     <i class="fab fa-github"></i> GitHub Profile
+                                </a>
+                                <a href="https://discord.com/channels/1492154438217895986/1492154438217895989" target="_blank" class="nav-link discord-link" style="display: flex; align-items: center; gap: 10px; width: fit-content;">
+                                    <i class="fab fa-discord"></i> Discord Community
                                 </a>
                                 <a href="https://twitter.com/xsatyam" target="_blank" class="nav-link" style="display: flex; align-items: center; gap: 10px; width: fit-content;">
                                     <i class="fab fa-x-twitter"></i> X Profile
@@ -164,9 +205,9 @@
             <p>&copy; 2026 All Rights Reserved</p>
         </div>
         <div class="footer-socials">
-            <a href="https://github.com" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
-            <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://github.com/xsatyam" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/xsatyam/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/xsatym" target="_blank" class="social-icon"><i class="fab fa-x-twitter"></i></a>
         </div>
         <div class="footer-right">
             <p class="build-stamp">Built with ❤️ by Satyam 2026</p>

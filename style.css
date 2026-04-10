@@ -15,7 +15,8 @@
     --text-color: #212529;
     --header-bg: rgba(255, 255, 255, 0.8);
     --border-color: rgba(0, 0, 0, 0.1);
-    --card-bg: rgba(0, 0, 0, 0.03);
+    --card-bg: #f1f3f5;
+    --card-hover: #e9ecef;
 }
 
 /* Global Styles */
@@ -260,6 +261,12 @@ h2, h3 {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
+.discord-link:hover {
+    background: #5865F2 !important;
+    color: white !important;
+    border-color: #5865F2 !important;
+}
+
 /* Distinct Buttons for Sponsor & AI */
 .nav-btn {
     padding: 10px 22px;
@@ -285,8 +292,11 @@ h2, h3 {
 }
 
 .nav-btn:hover {
-    opacity: 0.9;
+    background: #000000 !important;
+    color: #ffffff !important;
     transform: scale(1.05);
+    opacity: 1;
+    border-color: #000000 !important;
 }
 
 .submit-btn {
@@ -301,7 +311,7 @@ h2, h3 {
 
 .theme-toggle {
     position: fixed;
-    bottom: 30px;
+    bottom: 50px;
     right: 30px;
     background: var(--card-bg);
     backdrop-filter: blur(10px);
@@ -347,10 +357,19 @@ h2, h3 {
     height: 320px; /* Increased size */
     flex-shrink: 0;
     border-radius: 50%; /* Back to round */
-    padding: 8px;
-    background: #000000;
-    border: 2px solid #000000;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid var(--border-color);
     overflow: hidden; /* Keep the zoom contained */
+    transition: border-color 0.3s ease;
+}
+
+[data-theme="light"] .profile-photo-wrapper {
+    background: #ffffff;
+}
+
+.profile-photo-wrapper:hover {
+    border-color: #ffffff;
 }
 
 .profile-photo {
@@ -378,6 +397,36 @@ h2, h3 {
     font-size: 1.6rem; /* Increased font size */
     color: var(--text-color);
     opacity: 0.8;
+    margin-bottom: 24px;
+}
+
+.stats-list {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.stats-list li {
+    font-family: var(--mono-font);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding-left: 15px;
+    border-left: 2px solid var(--border-color);
+    transition: border-color 0.3s ease;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.stats-list li strong {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.stats-list li:hover {
+    border-left-color: var(--accent-color);
 }
 
 /* Update responsive behavior for profile section */
@@ -389,8 +438,8 @@ h2, h3 {
         margin-bottom: 40px;
     }
     .profile-photo-wrapper {
-        width: 200px; /* Scaled down for mobile */
-        height: 200px;
+        width: 240px; /* Scaled down for mobile */
+        height: 240px;
     }
     .intro-text h1 {
         font-size: 2.2rem;
@@ -401,6 +450,82 @@ h2, h3 {
 }
 
 /* Page Sections */
+/* AI Chatbot Styling */
+.chat-container {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) transparent;
+}
+
+.chat-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 10px;
+}
+
+.chat-message {
+    padding: 10px 16px;
+    border-radius: 18px;
+    max-width: 80%;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    font-family: var(--mono-font);
+}
+
+.bot-message {
+    align-self: flex-start;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    border-bottom-left-radius: 4px;
+}
+
+.user-message {
+    align-self: flex-end;
+    background: #000000;
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.chat-message strong {
+    color: var(--accent-color);
+    margin-right: 5px;
+}
+
+.user-message strong {
+    color: #ffffff;
+    opacity: 0.8;
+}
+
+.control-btn {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
+
+.control-btn:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+    transform: scale(1.1);
+}
+
+.clear-btn:hover {
+    background: #ff4d4d !important;
+    color: white !important;
+    border-color: #ff4d4d !important;
+}
+
 .page-section {
     padding: 120px 0;
     border-bottom: 1px solid var(--border-color);
@@ -422,7 +547,46 @@ h2, h3 {
 }
 
 .card:hover {
-    background: rgba(255,255,255,0.08);
+    background: var(--card-hover, rgba(255,255,255,0.08));
+}
+
+.skills-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.skills-table th, .skills-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    font-family: var(--mono-font);
+}
+
+.skills-table th {
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.skills-table td {
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.skills-table td strong {
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+}
+
+.skills-table tr:last-child td {
+    border-bottom: none;
+}
+
+.skills-table tr:hover {
+    background: rgba(255, 255, 255, 0.02);
 }
 
 .project-grid {
